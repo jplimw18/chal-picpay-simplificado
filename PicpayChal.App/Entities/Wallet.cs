@@ -3,9 +3,8 @@ using System.Collections.Immutable;
 namespace PicpayChal.App.Entities;
 
 public record Wallet(string Name, string Cpf, string Email, int Type, decimal Balance)
+    : BaseEntity
 {
-    public long Id { get; private set; } = 0L;
-
     public IImmutableList<int> Transactions { get; set; } = [];
 
     private Wallet()
