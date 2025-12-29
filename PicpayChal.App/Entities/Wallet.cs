@@ -9,7 +9,7 @@ public record Wallet(string Name, string Cpf, string Email, int Type, decimal Ba
     public IImmutableList<int> Transactions { get; set; } = [];
 
     private Wallet()
-        : this(string.Empty, string.Empty, string.Empty, default, default);
+        : this(string.Empty, string.Empty, string.Empty, default, default) { }
 }
 
 
