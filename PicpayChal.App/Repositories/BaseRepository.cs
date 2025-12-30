@@ -17,11 +17,11 @@ public abstract class BaseRepository<T>(AppDbContext context)
     public void Delete(T entity) =>
         Context.Remove(entity);
 
-    public Task<List<T>> GetAll() =>
-        Context.Set<T>().ToListAsync();
+    public List<T> GetAll() =>
+        [.. Context.Set<T>()];
 
-    public Task<T> GetById(long Id) =>
-        Context.Set<T>().FirstOrDefaultAsync(x => x.Id == Id)!;
+    public T GetById(long Id) =>
+        Context.Set<T>().FirstOrDefault(x => x.Id == Id)!;
 
     public T Update(T entity) =>
         Context.Update(entity).Entity;
