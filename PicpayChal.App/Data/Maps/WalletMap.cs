@@ -23,6 +23,9 @@ public sealed class WalletMap : IEntityTypeConfiguration<Wallet>
         builder.Property(x => x.Email).IsRequired();
 
 
+        builder.Property(x => x.Type).IsRequired();
+
+
         builder.Property(x => x.Balance);
     }
 }
