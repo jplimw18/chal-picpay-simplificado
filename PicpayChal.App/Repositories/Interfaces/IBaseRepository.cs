@@ -9,6 +9,6 @@ public interface IBaseRepository<T> where T : BaseEntity
     T Update(T entity);
     void Delete(T entity);
 
-    Task<T> GetById(long Id);
-    Task<List<T>> GetAll();
+    T GetById(long Id);
+    List<T> GetAll();
 }
